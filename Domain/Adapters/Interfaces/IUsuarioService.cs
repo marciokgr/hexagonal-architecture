@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Domain.Interfaces
+namespace Domain.Adapters.Interfaces
 {
     public interface IUsuarioService
     {

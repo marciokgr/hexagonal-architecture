@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
+using Domain.Adapters.Interfaces;
 using Domain.Entities;
-using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace hexagonal_architecture.Controllers

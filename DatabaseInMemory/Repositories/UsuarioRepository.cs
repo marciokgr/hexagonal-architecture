@@ -1,5 +1,5 @@
-﻿using Domain.Entities;
-using Domain.Interfaces;
+﻿using Domain.Adapters.Interfaces;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

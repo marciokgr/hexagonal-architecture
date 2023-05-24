@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using DatabaseInMemory.Repositories;
-using Domain.Interfaces;
+using Domain.Adapters.Interfaces;
 
 namespace Infrastructure.DatabaseInMemory
 {

@@ -1,7 +1,7 @@
-﻿using Domain.Interfaces;
-using Domain.Entities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Domain.Entities;
+using Domain.Adapters.Interfaces;
 
 namespace Application.Services
 {
@@ -9,9 +9,10 @@ namespace Application.Services
     {
 
         private readonly IUsuarioService _usuarioRepository;
+        private readonly IEmailAdapter _emailAdapter;
 
-        public UsuarioServiceManager(IUsuarioService usuarioService) =>
-               (_usuarioRepository) = (usuarioService);
+        public UsuarioServiceManager(IUsuarioService usuarioService, IEmailAdapter emailAdapter) =>
+               (_usuarioRepository, _emailAdapter) = (usuarioService, emailAdapter);
 
         public async Task<IEnumerable<Usuario>> GetAll()
         {
@@ -21,7 +22,9 @@ namespace Application.Services
 
         public async Task<int> Insert(Usuario usuario)
         {
-            var id = await _usuarioRepository.Insert(usuario);           
+            var id = await _usuarioRepository.Insert(usuario);
+
+            _ = _emailAdapter.SendEmail("", "", "", "");
 
             return id;
         }
